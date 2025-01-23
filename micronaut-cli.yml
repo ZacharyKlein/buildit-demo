@@ -3,4 +3,4 @@ defaultPackage: com.example
 testFramework: junit
 sourceLanguage: java
 buildTool: gradle
-features: [app-name, gcp-secrets-manager, github-workflow-google-cloud-run-graalvm, gradle, http-client-test, java, java-application, junit, logback, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, properties, readme, serialization-jackson, shade, static-resources]
+features: [app-name, gradle, http-client-test, java, java-application, junit, langchain4j-openai, logback, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, openapi, properties, readme, serialization-jackson, shade, static-resources]

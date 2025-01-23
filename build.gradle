@@ -13,10 +13,13 @@ repositories {
 
 dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
+    annotationProcessor("io.micronaut.langchain4j:micronaut-langchain4j-processor")
+    annotationProcessor("io.micronaut.openapi:micronaut-openapi")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
-    implementation("io.micronaut.gcp:micronaut-gcp-secret-manager")
+    implementation("io.micronaut.langchain4j:micronaut-langchain4j-openai")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     compileOnly("io.micronaut:micronaut-http-client")
+    compileOnly("io.micronaut.openapi:micronaut-openapi-annotations")
     runtimeOnly("ch.qos.logback:logback-classic")
     testImplementation("io.micronaut:micronaut-http-client")
 }
@@ -31,15 +34,6 @@ java {
 }
 
 
-tasks {
-    dockerBuild {
-        images = ["${System.env.DOCKER_IMAGE ?: project.name}:$project.version"]
-    }
-
-    dockerBuildNative {
-        images = ["${System.env.DOCKER_IMAGE ?: project.name}:$project.version"]
-    }
-}
 graalvmNative.toolchainDetection = false
 
 micronaut {
